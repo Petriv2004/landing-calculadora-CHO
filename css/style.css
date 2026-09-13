@@ -990,9 +990,19 @@ button {
   .btn { padding: 10px 18px; font-size: 0.92rem; }
   .btn--lg { padding: 12px 22px; font-size: 1rem; width: 100%; justify-content: center; }
 
+  .card-grid { gap: 14px; margin: 22px 0; }
   .info-card, .steps__item { padding: 16px; }
-  .player-card { padding: 20px 16px 16px; }
-  .coach-tip { padding: 12px 14px; gap: 10px; }
+  .info-card__icon { width: 40px; height: 40px; margin-bottom: 10px; }
+  .coach-tip { padding: 12px 14px; gap: 10px; margin-top: 16px; }
+  .coach-tip__icon { width: 30px; flex: 0 0 30px; }
+  .section-subtitle { margin-top: 20px; }
+  .subheading { margin: 18px 0 4px; }
+  .note-box { padding: 12px 14px; margin: 16px 0; font-size: 0.92rem; }
+
+  .rule-card { padding: 14px 14px; }
+  .rule-card__icon { width: 32px; height: 32px; margin-bottom: 8px; }
+  .rule-card h3 { font-size: 0.95rem; }
+  .rule-card p { font-size: 0.85rem; }
 
   .scoreboard { padding: 10px 14px; gap: 10px 16px; margin-bottom: 26px; }
   .scoreboard__value { font-size: 1.25rem; }
@@ -1000,15 +1010,17 @@ button {
   .challenge { padding: 18px; border-radius: 16px; margin-bottom: 20px; }
   .challenge__header p { font-size: 0.92rem; }
 
-  .reto1-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .food-chip { padding: 10px 6px; font-size: 0.78rem; }
-  .food-chip__icon { width: 24px; height: 24px; }
+  .reto1-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .food-chip { padding: 8px 4px; font-size: 0.68rem; }
+  .food-chip__icon { width: 20px; height: 20px; margin: 0 auto 4px; }
 
   .nutrition-label { padding: 12px 14px; }
   .label-quiz__input input { font-size: 0.95rem; }
 
   .food-list { max-height: 360px; }
-  .food-item { flex-direction: column; align-items: stretch; padding: 10px; }
+  .food-item { flex-direction: column; align-items: stretch; padding: 10px; gap: 8px; }
+  .food-item__main { flex-basis: auto; }
+  .food-item__icon { width: 26px; height: 26px; flex: 0 0 26px; }
   .food-item__actions { margin-left: 0; justify-content: flex-end; }
   .meal-tray { padding: 14px; }
   .meal-tray__total strong { font-size: 1.2rem; }
