@@ -573,6 +573,9 @@ button {
   gap: 8px;
 }
 .category-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: rgba(255,255,255,0.12);
   color: #fff;
   border: 1px solid rgba(255,255,255,0.25);
@@ -581,6 +584,7 @@ button {
   font-size: 0.82rem;
   font-weight: 700;
 }
+.category-tab svg { flex: 0 0 auto; }
 .category-tab.is-active {
   background: var(--gold);
   color: var(--navy);
@@ -788,8 +792,29 @@ button {
   align-items: start;
 }
 .penalty__scene { text-align: center; }
-.penalty__svg { width: 100%; border-radius: 12px; }
-#penaltyBall { transition: transform 0.5s ease; }
+.penalty__field {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.penalty__field-img { width: 100%; display: block; }
+.penalty__ball {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  width: 8%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #e6e6e6 60%, #cfcfcf);
+  border: 1px solid rgba(0,0,0,0.25);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.35);
+  transform: translate(-50%, -50%) scale(1);
+  transition: left 0.6s ease, top 0.6s ease, transform 0.6s ease;
+}
+.penalty__ball--goal { left: 50%; top: 25%; transform: translate(-50%, -50%) scale(0.5); }
+.penalty__ball--miss { left: 76%; top: 28%; transform: translate(-50%, -50%) scale(0.65); }
 .penalty__result {
   font-family: var(--font-display);
   font-weight: 800;
@@ -877,7 +902,7 @@ button {
   .meal-tray { position: static; }
   .label-quiz { grid-template-columns: 1fr; }
   .penalty { grid-template-columns: 1fr; }
-  .penalty__svg { max-width: 320px; margin: 0 auto; }
+  .penalty__field { max-width: 320px; margin: 0 auto; }
   .coach-profile { grid-template-columns: 1fr; text-align: center; }
   .coach-profile__avatar { width: 140px; margin: 0 auto; }
   .coach-profile__list { text-align: left; }
@@ -948,7 +973,7 @@ button {
   .meal-tray { padding: 14px; }
   .meal-tray__total strong { font-size: 1.2rem; }
 
-  .penalty__svg { max-width: 240px; }
+  .penalty__field { max-width: 240px; }
   .penalty__result { font-size: 1.05rem; }
 
   .coach-profile { padding: 18px; gap: 18px; }
