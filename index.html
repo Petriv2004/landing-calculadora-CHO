@@ -557,7 +557,83 @@
     </div>
   </section>
 
-  <!-- ============ 6. NUTRICIONISTA ============ -->
+  <!-- ============ 6. CORRECCIÓN DEL JUEGO ============ -->
+  <section id="correccion" class="section section--dark">
+    <div class="container">
+      <span class="kicker kicker--yellow">
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Tiempo extra
+      </span>
+      <h2>Corrección del juego</h2>
+      <p class="section-lead section-lead--dark">
+        Practica el mismo ejercicio de tu cuadernillo: calcula cuántas unidades de insulina se necesitan para corregir la glucemia
+        y para cubrir los carbohidratos de una comida.
+      </p>
+
+      <div class="constants-card">
+        <h3>Valores fijos de este ejercicio</h3>
+        <div class="constants-grid">
+          <div class="constant-item">
+            <svg class="constant-item__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="#ffffff" stroke="#e6483b" stroke-width="3"/><circle cx="24" cy="24" r="11" fill="#e6483b"/><circle cx="24" cy="24" r="4" fill="#ffffff"/></svg>
+            <span class="constant-item__label">Glucemia objetivo</span>
+            <span class="constant-item__value">150 mg/dL</span>
+          </div>
+          <div class="constant-item">
+            <svg class="constant-item__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6C16 18 10 26 10 32a14 14 0 0028 0c0-6-6-14-14-26z" fill="#e6483b"/></svg>
+            <span class="constant-item__label">Factor de sensibilidad</span>
+            <span class="constant-item__value">33 mg/dL por U</span>
+          </div>
+          <div class="constant-item">
+            <svg class="constant-item__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M26 4L10 28h10l-4 16 20-26H24z" fill="#ffd23f" stroke="#e8b400" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <span class="constant-item__label">Relación carbohidratos</span>
+            <span class="constant-item__value">9 g por U</span>
+          </div>
+        </div>
+        <p class="constants-card__note">
+          Estos valores los define tu equipo de salud para tu tratamiento. En esta página quedan fijos: no se pueden cambiar.
+        </p>
+      </div>
+
+      <div class="correction-tool">
+        <div class="correction-tool__inputs">
+          <label class="correction-field">
+            <span>Glucemia actual (mg/dL)</span>
+            <input type="number" id="glucemiaInput" min="0" inputmode="numeric" placeholder="Ej: 190">
+          </label>
+          <label class="correction-field">
+            <span>Carbohidratos a consumir (g)</span>
+            <input type="number" id="carbsInput" min="0" inputmode="numeric" placeholder="Ej: 53">
+          </label>
+        </div>
+
+        <div class="correction-steps">
+          <div class="correction-step">
+            <span class="correction-step__label">Paso 1 · Corrección</span>
+            <span class="correction-step__value" id="step1Result">— U</span>
+          </div>
+          <div class="correction-step">
+            <span class="correction-step__label">Paso 2 · Carbohidratos</span>
+            <span class="correction-step__value" id="step2Result">— U</span>
+          </div>
+          <div class="correction-step correction-step--total">
+            <span class="correction-step__label">Total calculado</span>
+            <span class="correction-step__value" id="step3Result">— U</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="coach-tip coach-tip--light">
+        <div class="coach-tip__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 4L44 40H4z" fill="none" stroke="#ffd23f" stroke-width="3" stroke-linejoin="round"/><rect x="22" y="18" width="4" height="12" rx="2" fill="#ffd23f"/><circle cx="24" cy="34" r="2.4" fill="#ffd23f"/></svg>
+        </div>
+        <p><strong>Importante:</strong> los valores fijos de este ejercicio son un ejemplo educativo. Tu dosis real de insulina y las constantes
+        que debes usar las define tu equipo de salud. Nunca apliques insulina basándote únicamente en este resultado: siempre confírmalo
+        con tu médico o educador en diabetes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. NUTRICIONISTA ============ -->
   <section id="nutricionista" class="section section--light">
     <div class="container">
       <span class="kicker kicker--green">
@@ -588,7 +664,7 @@
     </div>
   </section>
 
-  <!-- ============ 7. FINAL ============ -->
+  <!-- ============ 8. FINAL ============ -->
   <section id="final" class="section section--trophy">
     <div class="container final__inner">
       <svg class="trophy" viewBox="0 0 64 64" aria-hidden="true">

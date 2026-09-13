@@ -844,6 +844,104 @@ button {
 }
 .penalty__question p { color: #fff; }
 
+/* ---------- Corrección del juego (constantes fijas + calculadora) ---------- */
+.constants-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin: 24px 0;
+}
+.constants-card h3 { color: #fff; font-size: 1rem; margin: 0 0 14px; }
+.constants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.constant-item {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 16px 14px;
+  text-align: center;
+}
+.constant-item__icon { width: 30px; height: 30px; margin: 0 auto 8px; }
+.constant-item__label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 6px;
+}
+.constant-item__value {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+.constants-card__note {
+  margin: 16px 0 0;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.correction-tool { margin: 28px 0; }
+.correction-tool__inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.correction-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.correction-field input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.95);
+  font-size: 1.05rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+.correction-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.correction-step {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.correction-step__label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.correction-step__value {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.correction-step--total {
+  background: rgba(255, 210, 63, 0.15);
+  border-color: var(--gold);
+}
+.correction-step--total .correction-step__value { color: var(--gold); }
+
 /* ---------- Coach profile (nutricionista) ---------- */
 .coach-profile {
   display: grid;
@@ -1027,6 +1125,13 @@ button {
 
   .penalty__field { max-width: 240px; }
   .penalty__result { font-size: 1.05rem; }
+
+  .constants-card { padding: 16px; }
+  .constants-grid { grid-template-columns: 1fr; gap: 8px; }
+  .constant-item { padding: 10px 12px; }
+  .correction-tool__inputs { grid-template-columns: 1fr; gap: 12px; }
+  .correction-steps { grid-template-columns: 1fr; gap: 8px; }
+  .correction-step__value { font-size: 1.3rem; }
 
   .coach-profile { padding: 18px; gap: 18px; }
   .coach-profile__avatar { width: 110px; }

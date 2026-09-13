@@ -598,4 +598,48 @@
   });
 
   initPenalty();
+
+  /* ---------------------------------------------------------
+     8. Corrección del juego — cálculo de insulina
+     Constantes fijas (definidas por el equipo de salud, no editables aquí)
+     --------------------------------------------------------- */
+  const CORRECTION_CONSTANTS = {
+    glucemiaObjetivo: 150,
+    factorSensibilidad: 33,
+    relacionCarbohidratos: 9,
+  };
+
+  const glucemiaInput = $("#glucemiaInput");
+  const carbsInput = $("#carbsInput");
+  const step1ResultEl = $("#step1Result");
+  const step2ResultEl = $("#step2Result");
+  const step3ResultEl = $("#step3Result");
+
+  function updateCorrection() {
+    const glucemiaRaw = glucemiaInput.value;
+    const carbsRaw = carbsInput.value;
+    const glucemia = Number(glucemiaRaw);
+    const carbs = Number(carbsRaw);
+    const hasGlucemia = glucemiaRaw !== "" && !Number.isNaN(glucemia);
+    const hasCarbs = carbsRaw !== "" && !Number.isNaN(carbs);
+
+    let step1 = 0;
+    if (hasGlucemia) {
+      const diff = glucemia - CORRECTION_CONSTANTS.glucemiaObjetivo;
+      step1 = diff > 0 ? round1(diff / CORRECTION_CONSTANTS.factorSensibilidad) : 0;
+    }
+
+    let step2 = 0;
+    if (hasCarbs && carbs > 0) {
+      step2 = Math.round(carbs / CORRECTION_CONSTANTS.relacionCarbohidratos);
+    }
+
+    step1ResultEl.textContent = hasGlucemia ? step1 + " U" : "— U";
+    step2ResultEl.textContent = hasCarbs ? step2 + " U" : "— U";
+    step3ResultEl.textContent = hasGlucemia || hasCarbs ? round1(step1 + step2) + " U" : "— U";
+  }
+
+  glucemiaInput.addEventListener("input", updateCorrection);
+  carbsInput.addEventListener("input", updateCorrection);
+  updateCorrection();
 })();
