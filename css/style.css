@@ -334,40 +334,60 @@ button {
   margin-bottom: 14px;
 }
 
-.player-card {
-  position: relative;
-  background: linear-gradient(160deg, rgba(255,255,255,0.09), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.15);
+/* Tarjetas de regla (semáforo de alimentos: verde / amarillo / rojo) */
+.rule-card {
   border-radius: var(--radius);
-  padding: 26px 22px 22px;
-  backdrop-filter: blur(2px);
+  padding: 24px 22px;
+  color: #fff;
 }
-.player-card h3 { color: #fff; }
-.player-card p { color: rgba(255,255,255,0.82); margin: 0; }
-.player-card__number {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.8rem;
-  color: rgba(255,255,255,0.25);
+.rule-card h3 { color: #fff; font-size: 1.05rem; }
+.rule-card p { color: rgba(255,255,255,0.85); margin: 0; }
+.rule-card__icon { width: 44px; height: 44px; margin-bottom: 14px; }
+.rule-card--green {
+  background: linear-gradient(160deg, rgba(42,168,95,0.35), rgba(42,168,95,0.1));
+  border: 1px solid rgba(42,168,95,0.55);
 }
-.player-card__icon {
-  width: 48px; height: 48px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 12px;
-  padding: 8px;
-  margin-bottom: 14px;
+.rule-card--yellow {
+  background: linear-gradient(160deg, rgba(255,210,63,0.3), rgba(255,210,63,0.08));
+  border: 1px solid rgba(255,210,63,0.55);
+}
+.rule-card--red {
+  background: linear-gradient(160deg, rgba(230,72,59,0.3), rgba(230,72,59,0.1));
+  border: 1px solid rgba(230,72,59,0.55);
 }
 
 .note-box {
-  background: rgba(255, 210, 63, 0.12);
-  border: 1px dashed var(--gold);
+  background: rgba(255, 210, 63, 0.14);
+  border: 1px dashed var(--gold-dark);
   border-radius: 12px;
   padding: 16px 18px;
-  color: #fff;
+  color: var(--ink);
   max-width: 720px;
+  margin: 24px 0;
+}
+
+.section-subtitle { margin-top: 30px; }
+.section-subtitle--dark { color: #fff; }
+
+.subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  margin: 24px 0 6px;
+}
+
+.highlight-result {
+  display: inline-block;
+  background: rgba(255, 210, 63, 0.15);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--gold);
+  margin: 6px 0 14px;
 }
 
 /* ---------- Coach tip ---------- */
@@ -893,6 +913,26 @@ button {
   font-size: 0.85rem;
 }
 .site-footer__note { margin: 4px 0 0; opacity: .7; }
+.site-footer__references {
+  text-align: left;
+  max-width: 720px;
+  margin: 18px auto 0;
+  font-size: 0.78rem;
+}
+.site-footer__references summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+}
+.site-footer__references ol {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.site-footer__references a { color: var(--gold); word-break: break-all; }
 
 /* =========================================================
    Responsive
